@@ -1,0 +1,22 @@
+//
+// reboot.scss
+// Extended from Bootstrap
+//
+
+html, body {
+  overflow-x: hidden;
+}
+
+html {
+  height: 100%;
+  overflow-y: scroll;
+}
+
+body {
+  min-height: 100%;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}

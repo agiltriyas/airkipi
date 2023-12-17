@@ -1,0 +1,80 @@
+//
+// badge.scss
+// Extended from Bootstrap
+//
+
+[class*="badge-"] {
+  z-index: $badge-z-index;
+}
+
+// Sizing
+
+.badge-sm {
+  padding: $badge-padding-y-sm $badge-padding-x-sm;
+  font-size: 65%;
+}
+
+.badge-md {
+  padding: $badge-padding-y-md $badge-padding-x-md;
+}
+
+.badge-lg {
+  padding: $badge-padding-y-lg $badge-padding-x-lg;
+}
+
+// Soft variants
+
+@each $color, $value in $theme-colors {
+  .badge-soft-#{$color} {
+    @include badge-variant-soft($value, $badge-soft-bg-opacity);
+  }
+}
+
+// Floating
+
+.badge.badge-floating {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: $badge-width;
+  min-height: $badge-width;
+  padding: .125rem;
+
+  &.badge-sm {
+    min-width: $badge-width-sm;
+    min-height: $badge-width-sm;
+  }
+
+  &.badge-md {
+    min-width: $badge-width-md;
+    min-height: $badge-width-md;
+  }
+
+  &.badge-lg {
+    min-width: $badge-width-lg;
+    min-height: $badge-width-lg;
+  }
+}
+
+.badge-floating:empty {
+  display: inherit;
+}
+
+// Floating - Button
+
+.btn > .badge-floating {
+  transform: translate(50%, -50%);
+}
+
+// Floating - Avatar
+
+.avatar {
+
+  .avatar-img + .badge-floating,
+  .avatar-title + .badge-floating {
+    transform: translate(50%, -50%);
+  }
+}
